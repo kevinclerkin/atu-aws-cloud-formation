@@ -8,6 +8,7 @@ Parameters:
     Description: FridayHIIT VPC
 
 Resources:
+  
   VPC:
     Type: 'AWS::EC2::VPC'
     Properties:
@@ -17,3 +18,13 @@ Resources:
       Tags:
         - Key: Name
           Value: !Ref VPCName
+
+  PublicSubnet:
+    Type: 'AWS::EC2::Subnet'
+    Properties:
+      VpcId: !Ref VPCName
+      CidrBlock: 10.0.1.0/24
+      AvailabilityZone: !Select [ 0, !GetAZs 'us-east-1' ]
+      Tags:
+        - Key: Name
+          Value: "PublicSubnet"
