@@ -38,3 +38,17 @@ Resources:
       Tags:
         - Key: Name
           Value: "PrivateSubnet"
+
+  PublicRouteTable:
+    Type: 'AWS::EC2::RouteTable'
+    Properties:
+      VpcId: !Ref VPCName
+      Tags:
+        - Key: Name
+          Value: "PublicRouteTable"
+  
+  PublicSubnetRouteTableAssociation:
+    Type: 'AWS::EC2::SubnetRouteTableAssociation'
+    Properties:
+      SubnetId: !Ref PublicSubnet
+      RouteTableId: !Ref PublicRouteTable
