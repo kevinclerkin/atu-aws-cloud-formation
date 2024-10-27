@@ -1,5 +1,11 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: 'AWS CloudFormation Template for FridayHIIT VPC"
+Description: "AWS CloudFormation Template for FridayHIIT VPC"
+
+Parameters:
+  VPCName:
+    Type: String
+    Default: FridayHIIT
+    Description: FridayHIIT VPC
 
 Resources:
   VPC:
@@ -10,11 +16,4 @@ Resources:
       EnableDnsHostnames: true
       Tags:
         - Key: Name
-          Value: FridayHIIT-VPC
-
-Outputs:
-  VPCID:
-    Description: 'VPC ID'
-    Value: !Ref VPC
-    Export:
-      Name: !Sub '${AWS::StackName}-VPCID'
+          Value: !Ref VPCName
