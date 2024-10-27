@@ -18,6 +18,19 @@ Resources:
       Tags:
         - Key: Name
           Value: !Ref VPCName
+  
+  InternetGateway:
+    Type: 'AWS::EC2::InternetGateway'
+    Properties:
+      Tags:
+        - Key: Name
+          Value: "InternetGateway"
+
+  AttachGateway:
+    Type: 'AWS::EC2::VPCGatewayAttachment'
+    Properties:
+      VpcId: !Ref MyVPC
+      InternetGatewayId: !Ref InternetGateway
 
   PublicSubnet:
     Type: 'AWS::EC2::Subnet'
@@ -52,3 +65,5 @@ Resources:
     Properties:
       SubnetId: !Ref PublicSubnet
       RouteTableId: !Ref PublicRouteTable
+  
+  
