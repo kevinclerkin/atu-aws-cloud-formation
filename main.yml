@@ -38,6 +38,7 @@ Resources:
       VpcId: !Ref VPCName
       CidrBlock: 10.0.1.0/24
       AvailabilityZone: !Select [ 0, !GetAZs 'us-east-1' ]
+      MapPublicIpOnLaunch: true
       Tags:
         - Key: Name
           Value: "PublicSubnet"
@@ -48,6 +49,7 @@ Resources:
       VpcId: !Ref VPCName
       CidrBlock: 10.0.2.0/24
       AvailabilityZone: !Select [ 0, !GetAZs 'us-east-1' ]
+      MapPublicIpOnLaunch: false
       Tags:
         - Key: Name
           Value: "PrivateSubnet"
