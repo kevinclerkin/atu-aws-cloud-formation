@@ -1,0 +1,26 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: "Main stack for FridayHIIT networking, compute and security stacks"
+
+Resources:
+  NetworkingStack:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: ""
+      Parameters:
+        VPCName: !Ref MyVPC
+        
+  ComputeStack:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: ""
+      Parameters:
+        VPCName: !Ref MyVPC
+        InstanceType: !Ref InstanceType
+  
+  SecurityStack:
+    Type: 'AWS::CloudFormation::Stack'
+    Properties:
+      TemplateURL: ""
+      Parameters:
+        VPCName: !Ref MyVPC
+        InstanceType: !Ref InstanceType
