@@ -1,0 +1,17 @@
+Parameters:
+  VPCName:
+    Type: String
+    Default: FridayHIIT
+    Description: FridayHIIT VPC
+
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+    Description: EC2 Instance Type
+  
+  CidrBlock:
+    Type: String
+    Default: 10.0.0.0/16
+    Description: CIDR block for the VPC
