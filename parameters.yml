@@ -1,27 +1,14 @@
-Parameters:
-  VPCName:
-    Type: String
-    Default: FridayHIIT
-    Description: FridayHIIT VPC
+- ParameterKey: VPCName
+  ParameterValue: MyVPC
 
-  InstanceType:
-    Type: String
-    Default: t2.micro
-    AllowedValues:
-      - t2.micro
-    Description: EC2 Instance Type
-  
-  CidrBlock:
-    Type: String
-    Default: 10.0.0.0/16
-    Description: CIDR block for the VPC
+- ParameterKey: InstanceType
+  ParameterValue: t2.micro
 
-  PublicSubnetCidrBlock:
-    Type: String
-    Default: 10.0.1.0/24
-    Description: CIDR block for the public subnet
+- ParameterKey: CidrBlock
+  ParameterValue: 10.0.0.0/16
 
-  PrivateSubnetCidrBlock:
-    Type: String
-    Default: 10.0.2.0/24
-    Description: CIDR block for the private subnet
+- ParameterKey: PublicSubnetCidrBlock
+  ParameterValue: 10.0.1.0/24
+
+- ParameterKey: PrivateSubnetCidrBlock
+  ParameterValue: 10.0.2.0/24

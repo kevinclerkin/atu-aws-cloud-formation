@@ -1,6 +1,34 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: "Main stack for FridayHIIT networking, compute and security stacks"
 
+Parameters:
+  VPCName:
+    Type: String
+    Default: FridayHIIT
+    Description: FridayHIIT VPC
+
+  InstanceType:
+    Type: String
+    Default: t2.micro
+    AllowedValues:
+      - t2.micro
+    Description: EC2 Instance Type
+  
+  CidrBlock:
+    Type: String
+    Default: 10.0.0.0/16
+    Description: CIDR block for the VPC
+  
+  PublicSubnetCidrBlock:
+    Type: String
+    Default: 10.0.1.0/24
+    Description: CIDR block for the public subnet
+  
+  PrivateSubnetCidrBlock:
+    Type: String
+    Default: 10.0.2.0/24
+    Description: CIDR block for the private subnet
+
 Mappings:
   RegionMap:
     us-east-1:
