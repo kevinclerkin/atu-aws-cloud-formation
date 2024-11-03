@@ -16,17 +16,17 @@ Parameters:
   
   CidrBlock:
     Type: String
-    Default: 10.0.0.0/16
+    Default: !Ref CidrBlock
     Description: CIDR block for the VPC
   
   PublicSubnetCidrBlock:
     Type: String
-    Default: 10.0.1.0/24
+    Default: !Ref PublicSubnetCidrBlock
     Description: CIDR block for the public subnet
   
   PrivateSubnetCidrBlock:
     Type: String
-    Default: 10.0.2.0/24
+    Default: !Ref PrivateSubnetCidrBlock
     Description: CIDR block for the private subnet
 
 Mappings:
@@ -50,6 +50,7 @@ Resources:
       Parameters:
         VPCName: !Ref MyVPC
         InstanceType: !Ref InstanceType
+        ImageId: !FindInMap [RegionMap, !Ref "AWS::Region", AMI]
   
   SecurityStack:
     Type: 'AWS::CloudFormation::Stack'
