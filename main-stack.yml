@@ -1,6 +1,15 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: "Main stack for FridayHIIT networking, compute and security stacks"
 
+Mappings:
+  RegionMap:
+    us-east-1:
+      AMI: ""
+      AZs: ""
+    us-west-2:
+      AMI: ""
+      AZs: ""
+
 Resources:
   NetworkingStack:
     Type: 'AWS::CloudFormation::Stack'
