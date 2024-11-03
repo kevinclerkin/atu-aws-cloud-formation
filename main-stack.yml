@@ -4,11 +4,8 @@ Description: "Main stack for FridayHIIT networking, compute and security stacks"
 Mappings:
   RegionMap:
     us-east-1:
-      AMI: ""
-      AZs: ""
-    us-west-2:
-      AMI: ""
-      AZs: ""
+      AMI: "ami-0e86e20dae9224db8"
+      AZs: ["us-east-1a"]
 
 Resources:
   NetworkingStack:
