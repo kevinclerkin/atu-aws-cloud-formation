@@ -1,2 +1,2 @@
 # atu-aws-cloud-formation
-AWS Cloud Formation - DevOps Software Engineering
+AWS Cloud Formation - ATU IaC Pipelines
